@@ -1,0 +1,9 @@
+<svg viewBox="0 0 690 290" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Tact</title>
+  <desc>Palavra tact em minusculo com ponto final solido.</desc>
+  <rect x="0" y="0" width="680" height="280" fill="var(--logo-bg, #262624)" rx="8"/>
+  <g transform="translate(340, 170)">
+    <text x="-15" y="0" font-family="'Inter', system-ui, sans-serif" font-size="130" font-weight="500" fill="var(--logo-fg, #faf9f5)" letter-spacing="-5" text-anchor="middle">tact</text>
+    <circle cx="135" cy="-8" r="13" fill="var(--logo-fg, #faf9f5)"/>
+  </g>
+</svg>

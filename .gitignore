@@ -1,0 +1,15 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Claude / tooling
+.claude/
+
+# Dependencies / build (futuro)
+node_modules/
+dist/
+.vercel/
+.env
+.env.local
