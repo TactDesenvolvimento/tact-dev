@@ -61,8 +61,8 @@ body {
 .bg-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: .55;
+  filter: blur(65px);
+  opacity: .42;
   will-change: transform;
   mix-blend-mode: screen;
 }
@@ -79,19 +79,6 @@ body {
   background: radial-gradient(circle at 60% 40%, rgba(232, 154, 125, .35), transparent 70%);
   animation: orbDrift2 36s ease-in-out infinite;
 }
-.bg-orb-3 {
-  width: 480px; height: 480px;
-  left: 10%; top: 55%;
-  background: radial-gradient(circle at 50% 50%, rgba(108, 210, 139, .18), transparent 70%);
-  animation: orbDrift3 32s ease-in-out infinite;
-}
-.bg-orb-4 {
-  width: 560px; height: 560px;
-  right: -120px; bottom: -160px;
-  background: radial-gradient(circle at 40% 60%, rgba(217, 119, 87, .32), transparent 70%);
-  animation: orbDrift4 40s ease-in-out infinite;
-}
-
 @keyframes orbDrift1 {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
   33%      { transform: translate3d(140px, 80px, 0) scale(1.1); }
@@ -100,15 +87,6 @@ body {
 @keyframes orbDrift2 {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
   50%      { transform: translate3d(-180px, 140px, 0) scale(1.15); }
-}
-@keyframes orbDrift3 {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  40%      { transform: translate3d(220px, -120px, 0) scale(1.08); }
-  75%      { transform: translate3d(-80px, -60px, 0) scale(.92); }
-}
-@keyframes orbDrift4 {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50%      { transform: translate3d(-160px, -100px, 0) scale(1.12); }
 }
 
 .bg-grid {
@@ -219,6 +197,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   transition: color .2s var(--ease), background .2s var(--ease);
 }
 .nav a:hover { color: var(--fg); background: rgba(255,255,255,.04); }
+.nav a.active { color: var(--fg); background: rgba(255,255,255,.06); }
 
 .nav-cta { display: none; }
 @media (min-width: 900px) { .nav-cta { display: inline-flex; } }
@@ -291,12 +270,12 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .btn-block { width: 100%; }
 
 .btn-primary {
-  background: var(--fg);
-  color: var(--bg-1);
+  background: var(--accent);
+  color: var(--bg);
 }
 .btn-primary:hover {
-  background: #fff;
-  box-shadow: 0 10px 30px -10px rgba(250, 249, 245, .35);
+  background: var(--accent-soft);
+  box-shadow: 0 10px 30px -10px rgba(217, 119, 87, .55);
 }
 
 .btn-ghost {
@@ -787,7 +766,6 @@ section { padding: clamp(70px, 9vw, 120px) 0; }
 }
 .segment:hover { transform: translateY(-3px); border-color: var(--line-strong); }
 .segment-icon {
-  font-size: 1.6rem;
   width: 44px;
   height: 44px;
   display: inline-flex;
@@ -795,7 +773,9 @@ section { padding: clamp(70px, 9vw, 120px) 0; }
   justify-content: center;
   border-radius: 10px;
   background: var(--accent-bg);
+  color: var(--accent-soft);
 }
+.segment-icon svg { width: 22px; height: 22px; }
 .segment h3 {
   margin: 0;
   font-size: 1.05rem;

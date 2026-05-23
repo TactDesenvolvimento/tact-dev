@@ -59,6 +59,23 @@
     targets.forEach(el => el.classList.add('is-visible'));
   }
 
+  // Active nav link on scroll
+  const sections = $$('section[id]');
+  const navLinks = $$('.nav a[href^="#"]');
+  if (sections.length && navLinks.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+    sections.forEach(s => sectionObserver.observe(s));
+  }
+
   // Footer year
   const yearEl = $('#year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
